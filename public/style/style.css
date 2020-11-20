@@ -1,0 +1,151 @@
+body{
+    background-color:#E5E5E5;
+}
+
+header{
+    background-color:white;
+    box-shadow: 0 1px 3px -2px rgba(0,0,0,0.33);
+    padding: 0 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 3.375rem;
+}
+
+header h1{
+    display: flex;
+    align-items: center;
+    font-family: "Montez";
+    font-size: 2rem;
+}
+
+header h1 img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem
+}
+
+header nav a{
+    margin-left: 0.75rem;
+    color: black;
+}
+
+main{
+    margin-top: 3.875rem;
+    padding-left: 20vw;
+    padding-right: 45vw;
+}
+
+main section{
+    margin: 0.5rem 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.33);
+    border-radius: 3px;
+}
+
+main section .info{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+main section .info img{
+    width: 2rem;
+    height: 2rem;
+
+    margin-right: 1rem;
+    border-radius: 9999px;
+}
+
+main section .info h2{
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+main section .wrapper {
+    position: relative;
+    width: 100%;
+
+    overflow: hidden;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+  
+main section .wrapper:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+  
+main section .wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main section .icones{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+main section .icones .icon{
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+main section .icones .icon svg{
+    width: 1rem;
+    height: 1rem;
+
+    margin-right: 0.3rem;
+}
+
+main section .icones .icon span{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+main section p{
+    font-family: 'Montserrat';
+    font-size: 0.7rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    padding-bottom: 1rem;
+}
+
+main section p strong{
+    font-weight: 600;
+}
+
+
+aside{
+    position: fixed;
+    top: 5rem;
+    width: 22vw;
+    right: 15vw;
+}
+
+@media(max-width: 960px) {
+    aside {
+        display: none;
+    }
+
+    main{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    
+    header{
+        padding: 0 5vw;
+    }
+}
