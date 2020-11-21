@@ -127,7 +127,8 @@ function flipcard(){
     'jogos/memoria/assets/icon.jfif',
     'Jogo da Memória',
     "Encontre todos os pares antes do tempo acabar", 
-    30)
+    Math.max(Math.ceil(30 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
+  );
 
 
   function timeout(){
