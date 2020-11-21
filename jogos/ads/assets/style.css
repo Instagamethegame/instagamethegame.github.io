@@ -27,18 +27,17 @@ main img, main video{
 }
 
 footer{
-    flex: 0 0 5rem;
+    flex: 0 0 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     font-family: 'Montserrat';
-    font-size: 2rem;
+    font-size: 1rem;
     color: white;
-}
 
 footer svg{
-    width: 2rem;
-    height: 2rem;
+    width: 1.2rem;
+    height: 1.2rem;
     stroke-width: 3;
 }
