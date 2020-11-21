@@ -6,13 +6,12 @@ var info = {
 }
 
 function loadGame(){
-    if(u('section').nodes.length)
-        u(u('section').last())
-            .children('.wrapper')
-            .children('iframe')
-            .nodes[0]
-            .contentWindow
-            .deactivate()
+    u(u('section').last())
+        .children('.wrapper')
+        .children('iframe')
+        .nodes[0]
+        .contentWindow
+        .deactivate()
     
     let chosenGame = games[Math.floor(Math.random() * games.length)]
     u('main')
@@ -109,6 +108,3 @@ function timer(time){
             .timeout()
     }
 }
-
-
-loadGame()
