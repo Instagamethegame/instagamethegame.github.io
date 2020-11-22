@@ -160,9 +160,9 @@ aside .voce .img svg{
     position: absolute;
     bottom: -12%;
     right: -12%;
-    width: 1.5vw;
-    height: 1.5vw;
-    padding: 0.2vw;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.2rem;
     border-radius: 9999px;
     background-color: #ededed;
 }
@@ -191,9 +191,9 @@ aside .voce .nome .input input:focus{
 
 aside .voce .nome .input svg{
     cursor: pointer;
-    width: 1.5vw;
-    height: 1.5vw;
-    padding: 0.2vw;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.2rem;
     border-radius: 9999px;
     background-color: #ededed;
 }
