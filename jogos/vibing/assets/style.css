@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+@keyframes beats {
+    0%, 14%, 100% {
+        background-color: #e60000;
+    }
+    15%, 28% {
+        background-color: #e67e00;
+    }
+    29%, 42% {
+        background-color: #dee600;
+    }
+    43%, 56% {
+        background-color: #04e762;
+    }
+    57%, 70% {
+        background-color: #00e6e2;
+    }
+    71%, 84% {
+        background-color: #0058e6;
+    }
+    85%, 99% {
+        background-color: #9500e6;
+    }
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    animation: beats 2s infinite;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

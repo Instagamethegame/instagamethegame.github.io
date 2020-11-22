@@ -1,4 +1,4 @@
-const games = ['memoria','escolha']
+const games = ['vibing', 'escolhas', 'memoria']
 var info = {
     streak: 0, 
     lives: 3,
