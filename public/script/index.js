@@ -6,6 +6,56 @@ var info = {
     timer: null
 }
 
+var firebaseConfig = {
+    apiKey: "AIzaSyAvcRBjbWvHfQIZm-0rQ6aRD7iyEoBXKDM",
+    authDomain: "instagamethegame.firebaseapp.com",
+    databaseURL: "https://instagamethegame.firebaseio.com",
+    projectId: "instagamethegame",
+    storageBucket: "instagamethegame.appspot.com",
+    messagingSenderId: "329922687957",
+    appId: "1:329922687957:web:d1a20693c8e1a3d4f6435c"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var bd = firebase.database();
+
+bd.ref().on('value', (snapshot)=>{
+    document.getElementById('scoreboard').innerHTML = ''
+    
+    Object
+        .entries(snapshot.val())
+        .map((el) => el[1])
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8)
+        .forEach((el) =>{
+            var li = document.createElement('li')
+            li.innerHTML = `
+            <img src="public/img/avatars/${el.avatar}.svg">
+            <span>${el.user}</span>
+            <span>${el.score}</span> `
+            document.getElementById('scoreboard').appendChild(li)
+        })
+
+})
+
+u('aside .voce .img').handle('click', () => {
+    let num = Math.floor(Math.random() * 50);
+    u('aside .voce .img img').attr('src', `public/img/avatars/${num}.svg`)
+    localStorage.num = num
+})
+if(localStorage.num){
+    u('aside .voce .img img').attr('src', `public/img/avatars/${localStorage.num}.svg`)
+}
+
+u('aside .voce input').on('keydown keyup', () => {
+    localStorage.nome = u('aside .voce input').nodes[0].value
+})
+if(localStorage.nome){
+    u('aside .voce input').nodes[0].value = localStorage.nome
+}
+
+
 function loadGame(){
     clearTimeout(info.timer)
 
@@ -129,10 +179,33 @@ function lose(){
             .nodes[0]
             .contentWindow
             .deactivate()
+        
+        if(parseInt(u('#maxpontos').text()) < info.streak){
+            u('#maxpontos').text(info.streak)
+            u('#submit').nodes[0].removeAttribute('disabled')
+            localStorage.streak = info.streak;
+        }
     } else {
         loadGame()
     }
 }
+
+if(localStorage.streak){
+    u('#maxpontos').text(localStorage.streak)
+}
+
+u('#submit').handle('click', function(){
+    if(!u(this).is(':disabled')) {
+        bd.ref().push({
+            user: u('aside .voce input').nodes[0].value,
+            score: parseInt(u('#maxpontos').text()),
+            avatar: parseInt(u('aside .voce .img img').attr('src').split('/')[3].split('.')[0])
+        })
+        u('#submit').attr('disabled', true)
+    }
+
+})
+
 
 function timer(time){
     u(u('section').last())

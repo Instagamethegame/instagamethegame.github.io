@@ -1,7 +1,7 @@
 const ganhar = Math.random() < 0.5
 var japassou = false
 
-document.getElementById('texto').innerText = (ganhar? "clique pra ganhar": "clique pra perder")
+document.getElementById('texto').innerText = (ganhar? "clicar pra ganhar": "clicar pra perder")
 
 window.parent.gameInfo(
     'jogos/escolha/assets/icon.jpg',

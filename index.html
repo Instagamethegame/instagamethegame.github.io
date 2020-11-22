@@ -16,8 +16,14 @@
 
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js" defer></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', feather.replace)
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace()
+        })
     </script>
     <script src="public/script/index.js" defer></script>
   
@@ -27,8 +33,7 @@
         <h1><a href="/"><img src="public/img/logo.svg"/> Instagame</a></h1>
         <nav>
             <a href="/zen.html"><i data-feather="moon"></i></a>
-            <a href="/leaderboard.html"><i data-feather="award"></i></a>
-            <a href="/about.html"><i data-feather="info"></i></a>
+            <a href="https://github.com/Instagamethegame/instagamethegame.github.io" target="_blank"><i data-feather="info"></i></a>
         </nav>
 
     </header>
@@ -62,7 +67,33 @@
         </section>
 
     </main>
-    <aside></aside>
+    <aside>
+        <div class="voce">
+            <div class="img">
+                <img src="public/img/avatars/1.svg">
+                <i data-feather="refresh-cw"></i>
+            </div>
+            <div class="nome">
+                <div class="input">
+                    <input type="text" name="nome" id="nome" value="anon">
+                    <label for="nome"><i data-feather="edit-3"></i></label>
+                </div>
+                <div class="score">
+                    pontuação
+                    <span id="maxpontos">0</span>
+                </div>
+            </div>
+            <button id="submit" disabled>
+                submeter
+            </button>
+        </div>
+
+        <h2>Hall da Fama</h2>
+
+        <ul id="scoreboard"></ul>
+    </aside>
 
 </body>
 </html>
+
+

@@ -1,5 +1,5 @@
 body{
-    background-color:#E5E5E5;
+    background-color:#fafafa;
 }
 
 header{
@@ -136,13 +136,141 @@ main section p strong{
 aside{
     position: fixed;
     top: 5rem;
-    width: 22vw;
+    width: 27vw;
     right: 15vw;
 }
+aside .voce{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+aside .voce .img{
+    flex: 0 0 3rem;
+    position: relative;
+}
+
+aside .voce .img img{
+    width: 100%;
+    height: auto;
+}
+
+aside .voce .img svg{
+    cursor: pointer;
+    position: absolute;
+    bottom: -12%;
+    right: -12%;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 0.2vw;
+    border-radius: 9999px;
+    background-color: #ededed;
+}
+
+aside .voce .nome .input{
+    display: flex;
+    align-items: center;
+}
+
+aside .voce .nome .input input{
+    border: none;
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+    font-family: 'Montserrat';
+    background-color: transparent;
+    transition: background 0.2s;
+    font-weight: 600;
+    min-width: 0;
+    width: 100%;
+}
+
+aside .voce .nome .input input:focus{
+    outline: none;
+    background-color: white;
+}
+
+aside .voce .nome .input svg{
+    cursor: pointer;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 0.2vw;
+    border-radius: 9999px;
+    background-color: #ededed;
+}
+
+aside .voce .score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    font-family: 'Montserrat';
+}
+
+aside .voce .score span{
+    font-weight: 600;
+}
+
+
+aside .voce button{
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+}
+
+aside .voce button:disabled{
+    background-color: #ededed;
+    border-color: grey;
+}
+
+aside h2{
+    font-family: 'Montserrat';
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+aside ul{
+    list-style: none;
+}
+
+aside ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0.2rem;
+}
+
+aside ul li img{
+    width: 2.5rem;
+    height: auto;
+}
+ aside ul li span:nth-child(2){
+     flex: 1;
+     padding: 0.5rem;
+ }
+
+ aside ul li span:nth-child(3){
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+
+
 
 @media(max-width: 960px) {
     aside {
-        display: none;
+        POSITION: static;
+        WIDTH: 100%;
+        PADDING: 5VW;
+    }
+    aside ul li{
+        margin-bottom: 0.5rem;
     }
 
     main{
