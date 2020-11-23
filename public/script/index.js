@@ -1,4 +1,4 @@
-const games = ['memoria', 'vibing', 'escolha','whack-a-pepe' ]
+const games = (location.hash.trim() != "" ? [location.hash.slice(1)] : ['memoria', 'vibing', 'escolha','whack-a-pepe' ])
 var info = {
     streak: 0, 
     lives: 3,

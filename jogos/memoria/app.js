@@ -1,56 +1,28 @@
 //cartas
-const cardArray = [
+var possiblecards = [
   {
-      name: 'foca',
-      img: 'assets/foca.jpg'
+    name: 'foca',
+    img: 'assets/foca.jpg'
   },
   {
-      name: 'foca',
-      img: 'assets/foca.jpg'
+    name: 'dog',
+    img: 'assets/dog.jpg'
   },
   {
-      name: 'dog',
-      img: 'assets/dog.jpg'
+    name: 'gato1',
+    img: 'assets/gato1.jpg'
   },
   {
-      name: 'dog',
-      img: 'assets/dog.jpg'
+    name: 'gato2',
+    img: 'assets/gato2.jpg'
   },
   {
-      name: 'gato1',
-      img: 'assets/gato1.jpg'
+    name: 'papagaio',
+    img: 'assets/papagaio.jpg'
   },
   {
-      name: 'gato1',
-      img: 'assets/gato1.jpg'
-  },
-  {
-      name: 'gato2',
-      img: 'assets/gato2.jpg'
-  },
-  {
-      name: 'gato2',
-      img: 'assets/gato2.jpg'
-  },
-  {
-      name: 'papagaio',
-      img: 'assets/papagaio.jpg'
-  },
-  {
-      name: 'papagaio',
-      img: 'assets/papagaio.jpg'
-  },
-  {
-      name: 'urso',
-      img: 'assets/urso.jpg'
-  },
-  {
-      name: 'urso',
-      img: 'assets/urso.jpg'
-  },
-  {
-    name: 'pato',
-    img: 'assets/pato.jpg'
+    name: 'urso',
+    img: 'assets/urso.jpg'
   },
   {
     name: 'pato',
@@ -60,11 +32,17 @@ const cardArray = [
     name: 'raposa',
     img: 'assets/raposa.jpg'
   },
-  {
-    name: 'raposa',
-    img: 'assets/raposa.jpg'
-  }
 ]
+
+var cardArray = []
+for(let i = 0; i < 4; i++){
+  let j = Math.floor(Math.random() * possiblecards.length);
+
+  cardArray.push(possiblecards[j])
+  cardArray.push(possiblecards[j])
+
+  possiblecards.splice(j, 1);
+}
 
 cardArray.sort(() => 0.5 - Math.random())
 
@@ -127,7 +105,7 @@ function flipcard(){
     'jogos/memoria/assets/icon.jfif',
     'Jogo da Memória',
     "Encontre todos os pares antes do tempo acabar", 
-    Math.max(Math.ceil(30 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
+    Math.max(Math.ceil(15 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
   );
 
 
