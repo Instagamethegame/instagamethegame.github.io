@@ -72,7 +72,7 @@ function loadGame(){
         u('main')
             .append(`<section>
                 <div class="info">
-                    <img />
+                    <img onload="u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})" />
                     <h2></h2> 
                 </div>
                 <div class='wrapper'>
@@ -97,8 +97,10 @@ function loadGame(){
                     <span></span>
                 </p>
             </section>`)
+
         feather.replace()
         u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
+        setTimeout(()=>u(u('section').last()).nodes[0].scrollIntoView({block:'center'}), 300)
     }
 }
 
@@ -139,11 +141,13 @@ function loadAd(){
                 <span></span>
             </p>
         </section>`)
+
     feather.replace()
     u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
 }
 
 function gameInfo(icon, title, description, time){
+    u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
     u(u('section').last())
         .children('.info')
         .children('img')
@@ -213,7 +217,6 @@ function timer(time){
         .children('.icon:nth-child(2)')
         .children('span')
         .text(time)
-    
 
     if(time > 0){
         time--;

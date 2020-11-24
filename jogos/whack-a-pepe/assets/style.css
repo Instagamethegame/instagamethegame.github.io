@@ -10,14 +10,14 @@ body, html {
     height: 100%;
     overflow: hidden;
 
-    
+    display: block;
 }
 
 .square{
     border: 2px solid black;
 }
 
-.grid{
+body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);

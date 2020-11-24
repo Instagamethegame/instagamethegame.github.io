@@ -3,7 +3,7 @@ const time = Math.max(Math.ceil(15 * Math.cos(parseInt(location.hash.slice(1))/3
 
 window.parent.gameInfo(
     'jogos/vibing/assets/icon.jpg',
-    'Acompanheo gato',
+    'Acompanhe o gato',
     'Acerte o tempo e os alvos com o gato.', 
     time
 );
