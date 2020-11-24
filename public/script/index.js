@@ -5,6 +5,7 @@ var info = {
     adcounter: 0,
     timer: null
 }
+ var raffle = [...games]
 
 var firebaseConfig = {
     apiKey: "AIzaSyAvcRBjbWvHfQIZm-0rQ6aRD7iyEoBXKDM",
@@ -68,7 +69,9 @@ function loadGame(){
             .contentWindow
             .deactivate()
         
-        let chosenGame = games[Math.floor(Math.random() * games.length)]
+        let chosenGame = raffle[Math.floor(Math.random() * raffle.length)]
+
+        raffle = raffle.filter(el => el != chosenGame).concat(games);
         u('main')
             .append(`<section>
                 <div class="info">
