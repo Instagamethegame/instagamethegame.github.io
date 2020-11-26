@@ -1,4 +1,4 @@
-const games = ['memoria', 'whack-a-pepe']
+const games = ['memoria', 'le-pepe']
 var streak = 0
 
 function loadGame(){
@@ -17,7 +17,7 @@ function loadGame(){
                 <h2></h2> 
             </div>
             <div class='wrapper'>
-                <iframe src="/jogos/${chosenGame}"></iframe>
+                <iframe src="/jogos/${chosenGame}#1"></iframe>
             </div>
             <div class='icones'> 
                 <div class='icon'>

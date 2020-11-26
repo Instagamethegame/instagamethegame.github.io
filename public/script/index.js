@@ -1,4 +1,4 @@
-const games = (location.hash.trim() != "" ? [location.hash.slice(1)] : ['memoria', 'vibing', 'escolha','whack-a-pepe' ])
+const games = (location.hash.trim() != "" ? [location.hash.slice(1)] : ['memoria', 'vibing', 'escolha','le-pepe' ])
 var info = {
     streak: 0, 
     lives: 3,
@@ -75,7 +75,7 @@ function loadGame(){
         u('main')
             .append(`<section>
                 <div class="info">
-                    <img onload="u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})" />
+                    <img />
                     <h2></h2> 
                 </div>
                 <div class='wrapper'>
@@ -102,8 +102,7 @@ function loadGame(){
             </section>`)
 
         feather.replace()
-        u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
-        setTimeout(()=>u(u('section').last()).nodes[0].scrollIntoView({block:'center'}), 300)
+        u('section').last().scrollIntoView({behavior:'smooth', block:'center'})
     }
 }
 
@@ -146,11 +145,10 @@ function loadAd(){
         </section>`)
 
     feather.replace()
-    u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
+    u('section').last().scrollIntoView({behavior:'smooth', block:'center'})
 }
 
 function gameInfo(icon, title, description, time){
-    u(u('section').last()).nodes[0].scrollIntoView({behavior:'smooth', block:'center'})
     u(u('section').last())
         .children('.info')
         .children('img')
@@ -210,7 +208,6 @@ u('#submit').handle('click', function(){
         })
         u('#submit').attr('disabled', true)
     }
-
 })
 
 

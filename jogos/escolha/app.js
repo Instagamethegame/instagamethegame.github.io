@@ -10,7 +10,6 @@ window.parent.gameInfo(
     Math.max(Math.ceil(5 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
 );
 
-
 function timeout(){
     if(!japassou) {
         japassou = true
