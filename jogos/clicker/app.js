@@ -4,7 +4,7 @@ var atual = 1
 window.parent.gameInfo(
     'jogos/clicker/assets/10.jpeg',
     'Click Click Click',
-    'Clique o mais rápido o possivel', 
+    'Clique o mais rápido o possível', 
     Math.max(Math.ceil(3 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
 );
 
