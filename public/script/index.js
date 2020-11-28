@@ -177,7 +177,6 @@ function lose(){
     info.lives--
 
     if(info.lives < 0) {
-        alert('Perdeu playboy')
         u(u('section').last())
             .children('.wrapper')
             .children('iframe')
@@ -187,6 +186,31 @@ function lose(){
             
         clearTimeout(info.timer)
         
+        u('main')
+        .append(`<section >
+            <div class="info">
+                <img src="jogos/tutorial/assets/icon.svg"/>
+                <h2>Instagame: The Game</h2> 
+            </div>
+            <div class='wrapper'>
+                <img src="public/img/perdeu.webp"></img>
+            </div>
+            <div class='icones'> 
+                <div class='icon'>
+                    <i data-feather="heart"></i>
+                    <span>${info.streak}</span>
+                </div>
+            </div>
+            <p>
+                <strong>@instagamethegame</strong>
+                <span>Perdeu Playboy, não esqueça de submeter seu score!! Ou clique pra recomeçar</span>
+            </p>
+        </section>`)
+
+        feather.replace()
+        u('section').last().scrollIntoView({behavior:'smooth', block:'center'})
+        u(u('section').last()).on('click', () => location.reload())
+
         if(parseInt(u('#maxpontos').text()) < info.streak){
             u('#maxpontos').text(info.streak)
             u('#submit').nodes[0].removeAttribute('disabled')
@@ -209,6 +233,7 @@ u('#submit').handle('click', function(){
             avatar: parseInt(u('aside .voce .img img').attr('src').split('/')[3].split('.')[0])
         })
         u('#submit').attr('disabled', true)
+        location.reload()
     }
 })
 
