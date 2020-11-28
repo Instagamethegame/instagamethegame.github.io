@@ -1,11 +1,11 @@
 const cnv = document.getElementById('jogo').getContext('2d')
-const intervalo = Math.ceil(100 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))) )
+const intervalo = Math.ceil(150 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))) )
 
 var pos = 0
 var speed = 0
-var gravidade = 0.0002
-var maxSpeed = 0.1
-var minSpeed = -0.1
+var gravidade = 0.0003
+var maxSpeed = 0.08
+var minSpeed = -0.12
 var pontos = [{x:0, y:0}]
 var TIME = null
 var lost = false
@@ -16,10 +16,10 @@ window.parent.gameInfo(
     'jogos/stonks/assets/icon.jpeg',
     'WallStreet Bets',
     'Mantenha suas ações no ar e longe dos empresários', 
-    15
+    10
 );
 
-for(let i = 100; i < 5000; i = i + intervalo){
+for(let i = 300; i < 5000; i = i + intervalo){
     let y = Math.max(Math.min((Math.random() * 100), 70), 30)
     document.getElementById('pipes').innerHTML += `<li class="pipe" id="pipe${i}"><img src="assets/pipe.png" style="height:${y - 10}%;"><img src="assets/pipe.png" style="height:${90 - y}%"></li>`
 
@@ -29,7 +29,7 @@ for(let i = 100; i < 5000; i = i + intervalo){
 
 function click(){
     pontos.push({x:250, y:pos * 10})
-    speed-=0.2
+    speed-=0.18
 }
 window.addEventListener('click', click)
 cnv.lineCap = 'round'
@@ -59,7 +59,7 @@ function draw(timing){
         cnv.beginPath()
         for(var i = 0; i < pontos.length; i++){
             cnv.lineTo(pontos[i].x, pontos[i].y)
-            pontos[i].x = pontos[i].x - 0.1 * dt
+            pontos[i].x = pontos[i].x - 0.2 * dt
         }
         cnv.lineTo(250, pos*10)
         cnv.stroke()
@@ -67,7 +67,7 @@ function draw(timing){
         for (let i = 0; i < pipes.length; i++) {
             document.getElementById(pipes[i].id).childNodes[0].style.left = pipes[i].x + "%"
             document.getElementById(pipes[i].id).childNodes[1].style.left = pipes[i].x + "%"
-            pipes[i].x = pipes[i].x - 0.06 * dt
+            pipes[i].x = pipes[i].x - 0.065* dt
             if(pipes[i].x > 15 && pipes[i].x < 25 && !(pipes[i].y > pos - 10 && pipes[i].y < pos + 10)){
                 window.parent.lose()
             }
