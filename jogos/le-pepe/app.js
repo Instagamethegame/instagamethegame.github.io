@@ -1,5 +1,5 @@
 var divs = document.querySelectorAll('div')
-var t = Math.max(Math.ceil(1000 * Math.cos(parseInt(location.hash.slice(1))/31)), 0);
+var t = Math.ceil(1000 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))));
 var target = 5;
 
 window.parent.gameInfo(

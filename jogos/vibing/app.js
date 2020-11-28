@@ -1,5 +1,5 @@
 const beats = []
-const time = Math.max(Math.ceil(15 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
+const time = Math.ceil(15 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))) )
 
 window.parent.gameInfo(
     'jogos/vibing/assets/icon.jpg',
@@ -9,22 +9,26 @@ window.parent.gameInfo(
 );
 
 for(let i = 2; i < time; i = i + (Math.random() * 4) + 1){
-    let x,y;
-    do{
+    let x = Math.random();
+    let y = Math.random();
+    while(x < 0.4 && y > 0.6) {
         x = Math.random()
         y = Math.random()
-    }while(x < 0.4 && y < 0.4)
+    }
 
-    beats.push({x , y, timing: i})
+    beats.push({x, y, timing: i})
 }
 
 const cnv = document.getElementById('jogo').getContext('2d')
 cnv.fillStyle = 'rgba(255, 255, 255, 0.3)'
-cnv.lineWidth = 3
+cnv.strokeStyle = 'white'
+cnv.lineWidth = 5
 
 var TIME = null;
 var current = 0;
+var lost = false;
 
+var prev = 0;
 function draw(timing){
     if(TIME != null){
         let dt = timing - TIME;
@@ -32,25 +36,29 @@ function draw(timing){
 
         cnv.clearRect(0, 0, 500, 500);
         
-        for(let i = beats.length - 1; i >= 0 ; i--) {
-            if((beats[i].timing - current) <= 0)
-                window.parent.lose();
+        if((beats[0].timing - current) <= 0)
+            window.parent.lose();
+        
+        let progress = (beats[0].timing - current) / (beats[0].timing - prev)
+        let sizing = Math.sin((progress * Math.PI) / 2);
 
+        for(i = 50; i < 500; i*=1.5){
             cnv.beginPath();
-            cnv.arc((beats[i].x * 500), (beats[i].y * 500), (beats[i].timing - current) * 150, 0, 2 * Math.PI);
+            cnv.arc((beats[0].x * 500), (beats[0].y * 500), sizing * i, 0, 2 * Math.PI);
             cnv.fill();
-            cnv.stroke();
+            if(i==50) cnv.stroke();
         }
     }
 
     TIME = timing;
-    animationframe = requestAnimationFrame(draw);
+    if(!lost) animationframe = requestAnimationFrame(draw);
 }
 
 var animationframe = requestAnimationFrame(draw);
 
 function timeout(){
-    window.parent.lose();
+    if(!lost)
+        window.parent.lose();
 }
 
 window.addEventListener('click', click)
@@ -58,13 +66,15 @@ function click(ev){
     let dx = beats[0].x - (ev.clientX / window.innerWidth);
     let dy = beats[0].y - (ev.clientY / window.innerHeight);
 
-    if(beats[0].timing - current <= 0.5 && (dx*dx + dy*dy) <= 0.2){
+    if(beats[0].timing - current <= 1 && (dx*dx + dy*dy) <= 0.4){
+        prev = beats[0].timing
         beats.shift();
         if(beats.length == 0) window.parent.win();
     }
 }
 
 function deactivate(){
+    lost = true;
     cancelAnimationFrame(animationframe);
     window.removeEventListener('click', click)
 }

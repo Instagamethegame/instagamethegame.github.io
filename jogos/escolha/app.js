@@ -7,8 +7,8 @@ window.parent.gameInfo(
     'jogos/escolha/assets/icon.jpg',
     'Escolhas',
     (ganhar? "Pensa Rápido, clique pra ganhar": "GG ez, só fica de boa ai"), 
-    Math.max(Math.ceil(5 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
-);
+    Math.ceil(5 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))))
+)
 
 function timeout(){
     if(!japassou) {

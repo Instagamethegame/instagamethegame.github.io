@@ -105,7 +105,7 @@ function flipcard(){
     'jogos/memoria/assets/icon.jfif',
     'Jogo da Memória',
     "Encontre todos os pares antes do tempo acabar", 
-    Math.max(Math.ceil(15 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
+    Math.ceil(15 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1))))))
   );
 
 

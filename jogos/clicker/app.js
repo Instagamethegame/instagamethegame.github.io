@@ -5,7 +5,7 @@ window.parent.gameInfo(
     'jogos/clicker/assets/10.jpeg',
     'Click Click Click',
     'Clique o mais rápido o possível', 
-    Math.max(Math.ceil(3 * Math.cos(parseInt(location.hash.slice(1))/31)), 0)
+    (Math.ceil(3 * (0.4 + 2496.16/(4160.26+Math.pow(1.39561242509, parseInt(location.hash.slice(1)))))))
 );
 
 function timeout(){

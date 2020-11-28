@@ -260,6 +260,9 @@ aside ul li img{
     padding: 0.5rem;
 }
 
+#musica{
+    display: none;
+}
 
 
 
@@ -282,3 +285,4 @@ aside ul li img{
         padding: 0 5vw;
     }
 }
+

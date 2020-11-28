@@ -1,0 +1,13 @@
+Voxel Revolution by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/7017-voxel-revolution
+License: http://creativecommons.org/licenses/by/4.0/
+
+Odyssey by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/4995-odyssey
+License: http://creativecommons.org/licenses/by/4.0/
+
+
+1 - y_min / (1 + e^(10t/x_span) * e^(-10*(x_start/x_span) - 5)
+y_min = 40%
+x_start = 10
+x_span = 30 
