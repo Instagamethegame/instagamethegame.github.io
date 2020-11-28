@@ -9,7 +9,7 @@ x_span = 30
 
 # Créditos
 
-## Musica
+## Músicas
 Voxel Revolution by Kevin MacLeod
 
 Link: https://incompetech.filmmusic.io/song/7017-voxel-revolution
@@ -22,7 +22,7 @@ Link: https://incompetech.filmmusic.io/song/4995-odyssey
 
 License: http://creativecommons.org/licenses/by/4.0/
 
-## Icones
+## Ícones
 Feather Icons by Cole Bemis
 
 Link: https://feathericons.com/
