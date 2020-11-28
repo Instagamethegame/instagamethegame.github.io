@@ -61,3 +61,23 @@ function lose(){
     loadGame()
 
 }
+
+if(localStorage.musica != 'pause')
+    u('#musica').first().play();
+else{
+    u(`a[href="#playpause"]`).html('<i data-feather="volume-x">')
+    feather.replace()
+}
+
+u(`a[href="#playpause"]`).handle('click', () =>{
+    if(u('#musica').first().paused){
+        localStorage.musica = 'play'
+        u(`a[href="#playpause"]`).html('<i data-feather="volume-2">')
+        u('#musica').first().play()
+    }else{
+        localStorage.musica = 'pause'
+        u(`a[href="#playpause"]`).html('<i data-feather="volume-x">')
+        u('#musica').first().pause()
+    }
+    feather.replace()
+})

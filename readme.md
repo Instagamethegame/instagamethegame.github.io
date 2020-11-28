@@ -25,3 +25,11 @@ Feather Icons by Cole Bemis
 Link: https://feathericons.com/
 
 License: https://github.com/feathericons/feather/blob/master/ 
+
+## Avatares
+
+Emojis Pack by Freepik
+
+Link: https://www.flaticon.com/packs/emojis-59
+
+License: https://www.freepikcompany.com/legal#nav-flaticon 
