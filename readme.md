@@ -1,7 +1,10 @@
 ## Função de Decaimento
 1 - y_min / (1 + e^(10t/x_span) * e^(-10*(x_start/x_span) - 5)
+
 y_min = 40%
+
 x_start = 10
+
 x_span = 30 
 
 # Créditos
