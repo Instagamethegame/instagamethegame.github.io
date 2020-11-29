@@ -1,4 +1,4 @@
-const games = ['memoria', 'le-pepe', 'clicker', 'find-troll-face']
+const games = ['memoria', 'le-pepe', 'clicker', 'find-troll-face', 'nazare-confusa']
 var streak = 0
 
 function loadGame(){
