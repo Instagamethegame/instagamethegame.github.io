@@ -1,7 +1,6 @@
 var color = ['#7189bf', '#df7599', '#ffc785', '#72d6c9'][Math.floor(Math.random() * 4)]
 var ad = [
     {tipo: 'foto', arquivo:'luna.png', descricao: 'Veja mais fofura em @meetlunamarie no instagram 🐱'},
-    {tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},
     {tipo: 'foto', arquivo:'diegoexe.jpg', descricao: 'DIEGO.EXE: A Lenda Urbana do DCOMP onde um professor se vinga de todos os seus alunos. Disponível nunca em 8K exclusivamente Polystation 5'},
     {tipo: 'foto', arquivo:'mundo.jpg', descricao: 'O GOVERNO AMERICANO MENTIU PRA VOCÊ ESSAS SÃO AS IMAGENS REAIS DA TERRA TUDO INVENÇÃO DA MAÇONARIA'}
 ][Math.floor(Math.random() * 2)]
@@ -53,3 +52,5 @@ function deactivate() {
             .childNodes[0]
             .pause()
 }
+
+//{tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},
