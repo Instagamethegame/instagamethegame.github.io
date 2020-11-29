@@ -260,7 +260,8 @@ function timer(time){
 
 if(localStorage.musica != 'pause')
     u('#musica').first().play();
-else{
+
+if(u('#musica').first().paused) {
     u(`a[href="#playpause"]`).html('<i data-feather="volume-x">')
     feather.replace()
 }

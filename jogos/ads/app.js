@@ -51,6 +51,13 @@ function deactivate() {
             .getElementById('content')
             .childNodes[0]
             .pause()
+    
+    window.removeEventListener('click', click)
+}
+
+window.addEventListener('click', click)
+function click(){
+    window.parent.loadGame()
 }
 
 //{tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},

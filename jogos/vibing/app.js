@@ -46,7 +46,12 @@ function draw(timing){
             cnv.beginPath();
             cnv.arc((beats[0].x * 500), (beats[0].y * 500), sizing * i, 0, 2 * Math.PI);
             cnv.fill();
-            if(i==50) cnv.stroke();
+        }
+
+        if(beats[0].timing - current <= 1){
+            cnv.beginPath();
+            cnv.arc((beats[0].x * 500), (beats[0].y * 500), 100, 0, 2 * Math.PI);
+            cnv.stroke();
         }
     }
 
