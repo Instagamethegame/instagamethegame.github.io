@@ -60,7 +60,7 @@ if(localStorage.nome){
 function loadGame(){
     clearTimeout(info.timer)
 
-    if((info.adcounter++) == 5) loadCutscene()
+    if((info.adcounter++) == 15) loadCutscene()
     else {
         u(u('section').last())
             .children('.wrapper')
