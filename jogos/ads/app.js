@@ -1,8 +1,10 @@
 var color = ['#7189bf', '#df7599', '#ffc785', '#72d6c9'][Math.floor(Math.random() * 4)]
 var ad = [
+    {tipo: 'foto', arquivo:'luna.png', descricao: 'Veja mais fofura em @meetlunamarie no instagram 🐱'},
+    {tipo: 'foto', arquivo:'diegoexe.jpg', descricao: 'DIEGO.EXE: A Lenda Urbana do DCOMP onde um professor se vinga de todos os seus alunos. Disponível nunca em 8K exclusivamente no Polystation 5'},
     {tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},
     {tipo: 'video', arquivo:'trotta.mp4', descricao: 'Ouça agora Such a Beach, disponível em todas as plataformas de streaming!'},
-][Math.floor(Math.random() * 2)]
+][Math.floor(Math.random() * 4)]
 
 feather.replace()
 
@@ -64,7 +66,3 @@ window.addEventListener('click', click)
 function click(){
     window.parent.loadGame()
 }
-
-
-//{tipo: 'foto', arquivo:'luna.png', descricao: 'Veja mais fofura em @meetlunamarie no instagram 🐱'},
-//{tipo: 'foto', arquivo:'diegoexe.jpg', descricao: 'DIEGO.EXE: A Lenda Urbana do DCOMP onde um professor se vinga de todos os seus alunos. Disponível nunca em 8K exclusivamente no Polystation 5'},
