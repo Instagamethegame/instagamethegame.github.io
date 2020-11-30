@@ -60,7 +60,7 @@ if(localStorage.nome){
 function loadGame(){
     clearTimeout(info.timer)
 
-    if((info.adcounter++) == 15) loadAd()
+    if((info.adcounter++) == 5) loadCutscene()
     else {
         u(u('section').last())
             .children('.wrapper')
@@ -106,7 +106,7 @@ function loadGame(){
     }
 }
 
-function loadAd(){
+function loadCutscene(){
     info.adcounter = 0
     u(u('section').last())
         .children('.wrapper')
@@ -122,7 +122,7 @@ function loadAd(){
                 <h2></h2> 
             </div>
             <div class='wrapper'>
-                <iframe src="/jogos/ads"></iframe>
+                <iframe src="/jogos/cutscene"></iframe>
             </div>
             <div class='icones'> 
                 <div class='icon'>
