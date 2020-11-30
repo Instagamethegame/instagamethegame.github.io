@@ -1,11 +1,12 @@
 var color = ['#7189bf', '#df7599', '#ffc785', '#72d6c9'][Math.floor(Math.random() * 4)]
 var ad = [
-    {tipo: 'foto', arquivo:'luna.png', descricao: 'Veja mais fofura em @meetlunamarie no instagram 🐱'},
-    {tipo: 'foto', arquivo:'diegoexe.jpg', descricao: 'DIEGO.EXE: A Lenda Urbana do DCOMP onde um professor se vinga de todos os seus alunos. Disponível nunca em 8K exclusivamente Polystation 5'},
-    {tipo: 'foto', arquivo:'mundo.jpg', descricao: 'O GOVERNO AMERICANO MENTIU PRA VOCÊ ESSAS SÃO AS IMAGENS REAIS DA TERRA TUDO INVENÇÃO DA MAÇONARIA'}
+    {tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},
+    {tipo: 'video', arquivo:'trotta.mp4', descricao: 'Ouça agora Such a Beach, disponível em todas as plataformas de streaming!'},
 ][Math.floor(Math.random() * 2)]
 
 feather.replace()
+
+let pausado = window.parent.document.getElementById('musica').paused
 
 document
     .getElementById('barrinha')
@@ -23,9 +24,12 @@ switch (ad.tipo) {
     case 'video':
         let video = document.createElement('video');
 
+        video.muted = window.parent.document.getElementById('musica').paused;
         video.autoplay = true;
         video.controls = false;
         video.loop = true;
+
+        window.parent.document.getElementById('musica').pause()
 
         video.src = 'ads/' + ad.arquivo
         document
@@ -53,6 +57,7 @@ function deactivate() {
             .pause()
     
     window.removeEventListener('click', click)
+    if(!pausado) window.parent.document.getElementById('musica').play()
 }
 
 window.addEventListener('click', click)
@@ -60,4 +65,6 @@ function click(){
     window.parent.loadGame()
 }
 
-//{tipo: 'video', arquivo:'anna.mp4', descricao: 'Venha conhecer meu canal, é de arrebentar!!! https://cutt.ly/chtfWfH'},
+
+//{tipo: 'foto', arquivo:'luna.png', descricao: 'Veja mais fofura em @meetlunamarie no instagram 🐱'},
+//{tipo: 'foto', arquivo:'diegoexe.jpg', descricao: 'DIEGO.EXE: A Lenda Urbana do DCOMP onde um professor se vinga de todos os seus alunos. Disponível nunca em 8K exclusivamente no Polystation 5'},
