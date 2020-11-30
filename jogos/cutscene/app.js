@@ -17,7 +17,7 @@ document
 switch (ad.tipo) {
     case 'foto':
         let img = document.createElement('img');
-        img.src = 'ads/' + ad.arquivo
+        img.src = 'cutscene/' + ad.arquivo
 
         document
             .getElementById('content')
@@ -33,7 +33,7 @@ switch (ad.tipo) {
 
         window.parent.document.getElementById('musica').pause()
 
-        video.src = 'ads/' + ad.arquivo
+        video.src = 'cutscene/' + ad.arquivo
         document
             .getElementById('content')
             .appendChild(video)
