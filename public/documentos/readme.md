@@ -1,3 +1,6 @@
+# Instagame: The Game
+Jogo desenvolvido em JavaScript e Html5
+
 ## Função de Decaimento
 1 - y_min / (1 + e^(10t/x_span) * e^(-10*(x_start/x_span) - 5)
 
