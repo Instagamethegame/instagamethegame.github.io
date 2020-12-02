@@ -286,5 +286,8 @@ aside ul li img{
     header{
         padding: 0 5vw;
     }
+    header h1{
+        font-size: 1.2rem;
+    }
 }
 
